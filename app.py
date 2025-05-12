@@ -17,20 +17,31 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # --- PROMPT FIJO (Definido directamente aquí) ---
 PROMPT_FIJO = """
-Rol: Eres un asistente de análisis académico y apoyo docente.
-Objetivo: Analizar el documento proporcionado para identificar posibles casos de plagio por copia textual, evaluar la aplicación básica de las normas de citación APA (7ª edición), resumir los hallazgos, proponer una retroalimentación específica para el estudiante, y estimar la proporción de contenido original vs. citado/potencialmente plagiado para el docente.
-Instrucciones:
-Por favor, analiza el siguiente documento de un estudiante universitario:
-Realiza las siguientes tareas de forma compacta y utilizando terminos comunes para humanizar lomas posible la respuesta:
-Retroalimentación para el Estudiante...
-Analsis de plagio...
-Revisa la Bibliografía...
-Genera un Resumen del Análisis...
-Retroalimentación para el Estudiante (Estilo Específico Emulado)...
-Uso de inteligencia regenrativa...
-Estimación de Contenido (Solo para el Docente)...
-Consideraciones Finales...
-"""
+**Tarea Principal:** Analizar el documento adjunto y generar un informe estructurado y conciso.
+**Estilo General:** Párrafos breves (sin tablas). Tono humano, profesional y constructivo.
+
+**Informe Requerido (Generar en este orden exacto y basar todo en los hallazgos):**
+
+**1. Retroalimentación para el Estudiante:**
+    * **Normas APA:** Observaciones clave sobre citas, referencias y aplicación general de APA vigente
+    * **Integridad Académica (Plagio):** Identificación de citas textuales sin formato APA correcto (comillas/bloque) y su implicación en la integridad, inidcarlas de forma integra identificanndo su fuente en formato apa vigente.
+    * **Uso de IA (si se detecta):** Comentarios sobre patrones de IA y la importancia de la autoría original, inidcarlas de forma integra.
+    * **Originalidad y Rigor:** Énfasis en la producción propia.
+
+**2. Análisis Detallado (Información para el Docente):**
+    * **A. Resumen Ejecutivo:** Principales hallazgos del análisis (plagio, APA, IA).
+    * **B. Bibliografía:** Evaluación de formato APA y consistencia con citas.
+    * **C. Análisis de Copias Textuales (Plagio):**
+        * Identificar fragmentos copiados textualmente.
+        * Indicar fuente probable (formato APA).
+        * Verificar formato de cita textual APA (SÍ/NO).
+        * Evaluar integridad según lo anterior.
+
+**3. Estimación de Contenido (Información para el Docente - NO incluir en la retroalimentación al estudiante):**
+    * % aproximado de Contenido Original.
+    * % aproximado de Contenido Citado / Potencialmente Plagiado.
+
+**Directriz Fundamental:** Enfocarse prioritariamente en la detección e informe de copias textuales que incumplen el formato APA para citas directas."""
 # Podrías definir un diccionario PROMPTS aquí si necesitas más de uno
 # PROMPTS = {"Análisis Académico": PROMPT_FIJO}
 # DEFAULT_PROMPT_NAME = "Análisis Académico"
