@@ -17,14 +17,16 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # --- PROMPT FIJO (Definido directamente aquí) ---
 PROMPT_FIJO = """
+**Rol:** Asistente IA para análisis académico (normas APA 7ª ed.).
 **Tarea Principal:** Analizar el documento adjunto y generar un informe estructurado y conciso.
 **Estilo General:** Párrafos breves (sin tablas). Tono humano, profesional y constructivo.
 
 **Informe Requerido (Generar en este orden exacto y basar todo en los hallazgos):**
 
 **1. Retroalimentación para el Estudiante:**
-    * **Normas APA:** Observaciones clave sobre citas, referencias y aplicación general de APA vigente
-    * **Integridad Académica (Plagio):** Identificación de citas textuales sin formato APA correcto (comillas/bloque) y su implicación en la integridad, inidcarlas de forma integra identificanndo su fuente en formato apa vigente.
+    *generar de forma cordial,profesional y humana un retroalimentacion a nivel universitario 
+    	* Iniciar con observaciones generales sobre el uso de citas, referencias y la aplicación general de las normas APA vigente en el documento, inidcarlas explicitamente inicandolas de forma integra asi como su origen en formato apa vigente.
+    	* **Integridad Académica (Plagio):** Identificación de citas textuales sin formato APA correcto (comillas/bloque) y su implicación en la integridad, inidcarlas de forma integra identificanndo su fuente en formato apa vigente.
     * **Uso de IA (si se detecta):** Comentarios sobre patrones de IA y la importancia de la autoría original, inidcarlas de forma integra.
     * **Originalidad y Rigor:** Énfasis en la producción propia.
 
@@ -399,7 +401,7 @@ if st.sidebar.button("❌ Finalizar Sesión", key="finish_session"):
     default_final_values = {
         'modelos_seleccionados': default_modelos_runtime, 'tamanio_fuente': "Mediano",
         'prompt_personalizado': PROMPT_FIJO, 'limpiar_texto_activo': False,
-        'deepseek_temperature': 0.7, 'deepseek_top_p': 0.9,
+        'deepseek_temperature': 0.5, 'deepseek_top_p': 0.7,
         'ultimas_respuestas': {}, 'archivo_procesado_nombre': None,
         'analizar_boton_presionado_flag': False # Resetear flag del botón también
     }
