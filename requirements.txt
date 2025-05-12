@@ -1,0 +1,9 @@
+streamlit
+openai>=1.0.0
+google-generativeai
+requests
+python-docx
+PyMuPDF
+# numpy # Descomentar si alguna dependencia interna los necesita
+# matplotlib # Descomentar si alguna dependencia interna los necesita
+# difflib # Es parte de la librería estándar de Python, no necesita estar aquí
